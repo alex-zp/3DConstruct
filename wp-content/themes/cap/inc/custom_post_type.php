@@ -7,7 +7,6 @@ function create_post_type() {
             'public'        =>  true,
             'has_archive'   =>  false,
             'taxonomies'    =>  array('post_tag'),
-            'menu_position' =>  21,
             'menu_icon'     =>  'dashicons-admin-home',
             'supports'	    =>	array('title', 'editor', 'page-attributes', 'thumbnail')
         )
@@ -18,7 +17,6 @@ function create_post_type() {
             'public'        =>  true,
             'has_archive'   =>  false,
             'taxonomies'    =>  array('post_tag'),
-            'menu_position' =>  22,
             'menu_icon'     =>  'dashicons-admin-home',
             'supports'	    =>	array('title', 'editor', 'page-attributes', 'thumbnail')
         )
@@ -30,7 +28,6 @@ function create_post_type() {
             'public'        =>  true,
             'has_archive'   =>  false,
             'taxonomies'    =>  array('post_tag'),
-            'menu_position' =>  23,
             'menu_icon'     =>  'dashicons-info',
             'supports'	    =>	array('title', 'editor', 'page-attributes', 'thumbnail')
         )
@@ -42,7 +39,6 @@ function create_post_type() {
             'public'        =>  true,
             'has_archive'   =>  false,
             'taxonomies'    =>  array('post_tag'),
-            'menu_position' =>  24,
             'menu_icon'     =>  'dashicons-format-gallery',
             'supports'	    =>	array('title', 'editor', 'page-attributes', 'thumbnail')
         )
@@ -53,7 +49,6 @@ function create_post_type() {
             'public'        =>  true,
             'has_archive'   =>  false,
             'taxonomies'    =>  array('post_tag'),
-            'menu_position' =>  24,
             'menu_icon'     =>  'dashicons-format-gallery',
             'supports'	    =>	array('title', 'editor', 'page-attributes', 'thumbnail')
         )
@@ -64,8 +59,39 @@ function create_post_type() {
             'public'        =>  true,
             'has_archive'   =>  false,
             'taxonomies'    =>  array('post_tag'),
-            'menu_position' =>  24,
             'menu_icon'     =>  'dashicons-format-gallery',
+            'supports'	    =>	array('title', 'editor', 'page-attributes', 'thumbnail')
+        )
+    );
+
+
+    register_post_type('Gallery_Concept',
+        array(
+            'labels'        =>  array('name' => __('Gallery concept models'), 'singular_name' => __('Gallery concept models')),
+            'public'        =>  true,
+            'has_archive'   =>  false,
+            'taxonomies'    =>  array('post_tag'),
+            'menu_icon'     =>  'dashicons-images-alt2',
+            'supports'	    =>	array('title', 'editor', 'page-attributes', 'thumbnail')
+        )
+    );
+    register_post_type('Gallery_Sales',
+        array(
+            'labels'        =>  array('name' => __('Gallery sales models'), 'singular_name' => __('Gallery sales models')),
+            'public'        =>  true,
+            'has_archive'   =>  false,
+            'taxonomies'    =>  array('post_tag'),
+            'menu_icon'     =>  'dashicons-images-alt2',
+            'supports'	    =>	array('title', 'editor', 'page-attributes', 'thumbnail')
+        )
+    );
+    register_post_type('Gallery_Planners',
+        array(
+            'labels'        =>  array('name' => __('Gallery planner models'), 'singular_name' => __('Gallery planner models')),
+            'public'        =>  true,
+            'has_archive'   =>  false,
+            'taxonomies'    =>  array('post_tag'),
+            'menu_icon'     =>  'dashicons-images-alt2',
             'supports'	    =>	array('title', 'editor', 'page-attributes', 'thumbnail')
         )
     );

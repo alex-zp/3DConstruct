@@ -1,5 +1,4 @@
 <?php
-
 function page_add_meta_box() {
     $screens = array('page');
     foreach($screens as $screen) {
@@ -19,13 +18,15 @@ function page_add_meta_box() {
                 add_meta_box('contact_map_sectionid', __('CONTACT MAP', 'contact_map_textdomain'), 'contact_map_meta_box_callback', $screen);
                 add_meta_box('contact_form_sectionid', __('CONTACT FORM', 'contact_form_textdomain'), 'contact_form_meta_box_callback', $screen);
                 break;
+            case 'GALLERY-PAGE.PHP':
+                add_meta_box('gallery_sectionid', __('GALLERY', 'gallery_textdomain'), 'gallery_meta_box_callback', $screen);
+                break;
             default:
                 break;
         }
     }
 }
 add_action('add_meta_boxes', 'page_add_meta_box');
-
 /*---------------------------------------*/
 /* ABOUT PAGE */
 /*---------------------------------------*/
@@ -42,7 +43,6 @@ function about_what_meta_box_callback($post) {
     echo '</label> ';
     echo '<textarea id="about_what_text_field" name="about_what_text_field" cols="128" rows="5" style="display: block; width: 100%; margin-bottom: 25px;">' . esc_attr($what_text) . '</textarea>';
 }
-
 function about_how_meta_box_callback($post) {
     wp_nonce_field('about_meta_box', 'about_meta_box_nonce');
     $how_title = get_post_meta($post->ID, '_how_title', true);
@@ -56,7 +56,6 @@ function about_how_meta_box_callback($post) {
     echo '</label> ';
     echo '<textarea id="about_how_text_field" name="about_how_text_field" cols="128" rows="5" style="display: block; width: 100%; margin-bottom: 25px;">' . esc_attr($how_text) . '</textarea>';
 }
-
 function about_save_meta_box_data($post_id) {
     if(!isset($_POST['about_meta_box_nonce'])) {
         return;
@@ -136,7 +135,6 @@ function services_meta_box_callback($post) {
     echo '</label> ';
     echo '<textarea id="services_terrain_text_field" name="services_terrain_text_field" cols="128" rows="5" style="display: block; width: 100%; margin-bottom: 25px;">' . esc_attr($terrain_text) . '</textarea>';
 }
-
 function services_save_meta_box_data($post_id) {
     if(!isset($_POST['services_meta_box_nonce'])) {
         return;
@@ -181,7 +179,6 @@ function contact_map_meta_box_callback($post) {
     echo '</label> ';
     echo '<input type="text" id="contact_map_value_field" name="contact_map_value_field" value="' . esc_attr($map_value) . '" size="25" style="display: block; width: 100%;" />';
 }
-
 function contact_form_meta_box_callback($post) {
     wp_nonce_field('contact_meta_box', 'contact_meta_box_nonce');
     $form_value = get_post_meta($post->ID, '_form_value', true);
@@ -190,7 +187,6 @@ function contact_form_meta_box_callback($post) {
     echo '</label> ';
     echo '<input type="text" id="contact_form_value_field" name="contact_form_value_field" value="' . esc_attr($form_value) . '" size="25" style="display: block; width: 100%;" />';
 }
-
 function contact_save_meta_box_data($post_id) {
     if(!isset($_POST['contact_meta_box_nonce'])) {
         return;
@@ -217,3 +213,46 @@ function contact_save_meta_box_data($post_id) {
 }
 add_action('save_post', 'contact_save_meta_box_data');
 /*---------------------------------------*/
+/* GALLERY PAGE */
+/*---------------------------------------*/
+function gallery_meta_box_callback($post) {
+    wp_nonce_field('gallery_meta_box', 'gallery_meta_box_nonce');
+    $gallery_value = get_post_meta($post->ID, '_gallery_value', true);
+    echo '<label for="gallery_value_field">';
+    _e('Gallery name', 'gallery_textdomain');
+    echo '</label> ';
+    echo '<select id="gallery_value_field" name="gallery_value_field" style="display: block; width: 100%;">
+                <option value="Gallery_Concept"';
+                    echo ('Gallery_Concept' == esc_attr($gallery_value)) ? 'selected' : '';
+                echo '>Concept models</option>
+                <option value="Gallery_Sales"';
+                    echo ('Gallery_Sales' == esc_attr($gallery_value)) ? 'selected' : '';
+                echo '>Sales models</option>
+                <option value="Gallery_Planners"';
+                    echo ('Gallery_Planners' == esc_attr($gallery_value)) ? 'selected' : '';
+                echo '>Planners models</option>
+            </select>';
+}
+function gallery_save_meta_box_data($post_id) {
+    if(!isset($_POST['gallery_meta_box_nonce'])) {
+        return;
+    }
+    if(!wp_verify_nonce($_POST['gallery_meta_box_nonce'], 'gallery_meta_box')) {
+        return;
+    }
+    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    if(isset($_POST['post_type']) && 'page' == $_POST['post_type']) {
+        if(!current_user_can('edit_page', $post_id)) {
+            return;
+        }
+    } else {
+        if(!current_user_can('edit_post', $post_id)) {
+            return;
+        }
+    }
+
+    update_post_meta($post_id, '_gallery_value', wp_kses($_POST['gallery_value_field'], array('br' => array())));
+}
+add_action('save_post', 'gallery_save_meta_box_data');

@@ -65,7 +65,12 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			if ( $args->has_children )
 				$class_names .= ' dropdown';
 
-			if ( in_array( 'current-menu-item', $classes ) )
+            $post_id = get_post();
+            $template_file = strtoupper(get_post_meta($post_id->ID, '_wp_page_template', TRUE));
+
+			if ( in_array( 'current-menu-item', $classes )
+                || (strtoupper($item->title) == 'GALLERY' && $template_file == 'GALLERY-PAGE.PHP')
+                || (strtoupper($item->title) == 'SECTORS' && $template_file == 'SECTORS-PAGE.PHP') )
 				$class_names .= ' active';
 
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';

@@ -67,6 +67,8 @@ main.mn-page-content > article.artc-page-content h3.h-sub-header { margin: 20px 
 footer.ftr-footer-content { padding: 100px 0 0; }
 footer.ftr-footer-content aside.asd-footer-widget { margin: 40px 0 20px; font-size: 12px; }
 footer.ftr-footer-content aside.asd-footer-widget.asd-bottom-info { margin-top: 0; }
+footer.ftr-footer-content aside.asd-footer-widget a { text-decoration: none; color: #4d4d4d; }
+footer.ftr-footer-content aside.asd-footer-widget a:hover { text-decoration: none; color: #00a99d; }
 /*-----------------------------------------------------------*/
 /* HOME page */
 /*-----------------------------------------------------------*/
@@ -192,7 +194,10 @@ div.dv-models-wrapper div.dv-models-item { margin: 0; padding: 0 10px 0 0; }
 /*-----------------------------------------------------------*/
 div.dv-sectors-wrapper strong { display: block; font-size: 14px; margin: 20px 0; }
 div.dv-sectors-wrapper ul { margin-left: 20px; }
-
+/*-----------------------------------------------------------*/
+/* GALLERY page */
+/*-----------------------------------------------------------*/
+div.dv-gallery-wrapper img.img-gallery-photo { width: 100%; height: auto; margin: 15px 0; border: 1px solid #cccccc; }
 /*-----------------------------------------------------------*/
 /* FAQS page */
 /*-----------------------------------------------------------*/
@@ -256,6 +261,23 @@ div.dv-post-wrapper div.dv-post-navigation div.nav-previous > a:hover
     }
 div.dv-post-wrapper div.dv-post-navigation div.nav-previous > a:before { content: '<'; }
 div.dv-post-wrapper div.dv-post-navigation div.nav-next > a:after { content: '>'; }
+/*-----------------------------------------------------------*/
+/* CONTACT page */
+/*-----------------------------------------------------------*/
+main.mn-page-content > article.artc-page-content div.dv-contact-wrapper h1.h-page-title { text-transform: none; }
+div.dv-contact-wrapper iframe { margin: 20px 0; }
+div.dv-contact-wrapper form { margin: 35px 0; }
+div.dv-contact-wrapper form p { font-size: 13px; font-weight: 700; }
+div.dv-contact-wrapper form input
+    , div.dv-contact-wrapper form textarea {
+        display: block;
+        width: 100%;
+        font-weight: 400;
+        margin: 5px 0;
+        padding: 5px 10px;
+    }
+div.dv-contact-wrapper form input {  }
+div.dv-contact-wrapper form textarea {  }
 /*-----------------------------------------------------------*/
 /* Navigation MENU */
 /*-----------------------------------------------------------*/
