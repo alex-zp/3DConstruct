@@ -15,6 +15,10 @@ function page_add_meta_box() {
             case 'SERVICES-PAGE.PHP':
                 add_meta_box('services_sectionid', __('SERVICES', 'services_textdomain'), 'services_meta_box_callback', $screen);
                 break;
+            case 'CONTACT-PAGE.PHP':
+                add_meta_box('contact_map_sectionid', __('CONTACT MAP', 'contact_map_textdomain'), 'contact_map_meta_box_callback', $screen);
+                add_meta_box('contact_form_sectionid', __('CONTACT FORM', 'contact_form_textdomain'), 'contact_form_meta_box_callback', $screen);
+                break;
             default:
                 break;
         }
@@ -81,7 +85,7 @@ function about_save_meta_box_data($post_id) {
 }
 add_action('save_post', 'about_save_meta_box_data');
 /*---------------------------------------*/
-/* ABOUT PAGE */
+/* SERVICES PAGE */
 /*---------------------------------------*/
 function services_meta_box_callback($post) {
     wp_nonce_field('services_meta_box', 'services_meta_box_nonce');
@@ -166,4 +170,50 @@ function services_save_meta_box_data($post_id) {
     update_post_meta($post_id, '_terrain_text', wp_kses($_POST['services_terrain_text_field'], array('br' => array())));
 }
 add_action('save_post', 'services_save_meta_box_data');
+/*---------------------------------------*/
+/* CONTACT PAGE */
+/*---------------------------------------*/
+function contact_map_meta_box_callback($post) {
+    wp_nonce_field('contact_meta_box', 'contact_meta_box_nonce');
+    $map_value = get_post_meta($post->ID, '_map_value', true);
+    echo '<label for="contact_map_value_field">';
+    _e('Address', 'contact_map_textdomain');
+    echo '</label> ';
+    echo '<input type="text" id="contact_map_value_field" name="contact_map_value_field" value="' . esc_attr($map_value) . '" size="25" style="display: block; width: 100%;" />';
+}
+
+function contact_form_meta_box_callback($post) {
+    wp_nonce_field('contact_meta_box', 'contact_meta_box_nonce');
+    $form_value = get_post_meta($post->ID, '_form_value', true);
+    echo '<label for="contact_form_value_field">';
+    _e('Sender shortcode', 'contact_form_textdomain');
+    echo '</label> ';
+    echo '<input type="text" id="contact_form_value_field" name="contact_form_value_field" value="' . esc_attr($form_value) . '" size="25" style="display: block; width: 100%;" />';
+}
+
+function contact_save_meta_box_data($post_id) {
+    if(!isset($_POST['contact_meta_box_nonce'])) {
+        return;
+    }
+    if(!wp_verify_nonce($_POST['contact_meta_box_nonce'], 'contact_meta_box')) {
+        return;
+    }
+    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    if(isset($_POST['post_type']) && 'page' == $_POST['post_type']) {
+        if(!current_user_can('edit_page', $post_id)) {
+            return;
+        }
+    } else {
+        if(!current_user_can('edit_post', $post_id)) {
+            return;
+        }
+    }
+
+    update_post_meta($post_id, '_map_value', wp_kses($_POST['contact_map_value_field'], array('br' => array())));
+
+    update_post_meta($post_id, '_form_value', wp_kses($_POST['contact_form_value_field'], array('br' => array())));
+}
+add_action('save_post', 'contact_save_meta_box_data');
 /*---------------------------------------*/

@@ -256,7 +256,6 @@ div.dv-post-wrapper div.dv-post-navigation div.nav-previous > a:hover
     }
 div.dv-post-wrapper div.dv-post-navigation div.nav-previous > a:before { content: '<'; }
 div.dv-post-wrapper div.dv-post-navigation div.nav-next > a:after { content: '>'; }
-.post-navigation .nav-previous a:before { background-color: transparent !important; }
 /*-----------------------------------------------------------*/
 /* Navigation MENU */
 /*-----------------------------------------------------------*/

@@ -19,6 +19,8 @@
         <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
         <![endif]-->
         <?php wp_head(); ?>
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/map.js"></script>
     </head>
     <?php
         $body_class = '';

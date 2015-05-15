@@ -7,20 +7,12 @@
  * @since cap 1.0
  */
 
-/**
- * Add postMessage support for site title and description for the Customizer.
- *
- * @since cap 1.0
- *
- * @param WP_Customize_Manager $wp_customize Customizer object.
- */
 function cap_customize_register( $wp_customize ) {
 	$color_scheme = cap_get_color_scheme();
 
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-	// Add color scheme setting and control.
 	$wp_customize->add_setting( 'color_scheme', array(
 		'default'           => 'default',
 		'sanitize_callback' => 'cap_sanitize_color_scheme',
@@ -35,7 +27,6 @@ function cap_customize_register( $wp_customize ) {
 		'priority' => 1,
 	) );
 
-	// Add custom header and sidebar text color setting and control.
 	$wp_customize->add_setting( 'sidebar_textcolor', array(
 		'default'           => $color_scheme[4],
 		'sanitize_callback' => 'sanitize_hex_color',
@@ -48,10 +39,8 @@ function cap_customize_register( $wp_customize ) {
 		'section'     => 'colors',
 	) ) );
 
-	// Remove the core header textcolor control, as it shares the sidebar text color.
 	$wp_customize->remove_control( 'header_textcolor' );
 
-	// Add custom header and sidebar background color setting and control.
 	$wp_customize->add_setting( 'header_background_color', array(
 		'default'           => $color_scheme[1],
 		'sanitize_callback' => 'sanitize_hex_color',
@@ -64,28 +53,11 @@ function cap_customize_register( $wp_customize ) {
 		'section'     => 'colors',
 	) ) );
 
-	// Add an additional description to the header image section.
 	$wp_customize->get_section( 'header_image' )->description = __( 'Applied to the header on small screens and the sidebar on wide screens.', 'cap' );
 }
 add_action( 'customize_register', 'cap_customize_register', 11 );
 
-/**
- * Register color schemes for cap.
- *
- * Can be filtered with {@see 'cap_color_schemes'}.
- *
- * The order of colors in a colors array:
- * 1. Main Background Color.
- * 2. Sidebar Background Color.
- * 3. Box Background Color.
- * 4. Main Text and Link Color.
- * 5. Sidebar Text and Link Color.
- * 6. Meta Box Background Color.
- *
- * @since cap 1.0
- *
- * @return array An associative array of color scheme options.
- */
+
 function cap_get_color_schemes() {
 	return apply_filters( 'cap_color_schemes', array(
 		'default' => array(
@@ -98,73 +70,11 @@ function cap_get_color_schemes() {
 				'#333333',
 				'#f7f7f7',
 			),
-		),
-		'dark'    => array(
-			'label'  => __( 'Dark', 'cap' ),
-			'colors' => array(
-				'#111111',
-				'#202020',
-				'#202020',
-				'#bebebe',
-				'#bebebe',
-				'#1b1b1b',
-			),
-		),
-		'yellow'  => array(
-			'label'  => __( 'Yellow', 'cap' ),
-			'colors' => array(
-				'#f4ca16',
-				'#ffdf00',
-				'#ffffff',
-				'#111111',
-				'#111111',
-				'#f1f1f1',
-			),
-		),
-		'pink'    => array(
-			'label'  => __( 'Pink', 'cap' ),
-			'colors' => array(
-				'#ffe5d1',
-				'#e53b51',
-				'#ffffff',
-				'#352712',
-				'#ffffff',
-				'#f1f1f1',
-			),
-		),
-		'purple'  => array(
-			'label'  => __( 'Purple', 'cap' ),
-			'colors' => array(
-				'#674970',
-				'#2e2256',
-				'#ffffff',
-				'#2e2256',
-				'#ffffff',
-				'#f1f1f1',
-			),
-		),
-		'blue'   => array(
-			'label'  => __( 'Blue', 'cap' ),
-			'colors' => array(
-				'#e9f2f9',
-				'#55c3dc',
-				'#ffffff',
-				'#22313f',
-				'#ffffff',
-				'#f1f1f1',
-			),
-		),
+		)
 	) );
 }
 
 if ( ! function_exists( 'cap_get_color_scheme' ) ) :
-/**
- * Get the current cap color scheme.
- *
- * @since cap 1.0
- *
- * @return array An associative array of either the current or default color scheme hex values.
- */
 function cap_get_color_scheme() {
 	$color_scheme_option = get_theme_mod( 'color_scheme', 'default' );
 	$color_schemes       = cap_get_color_schemes();
@@ -175,16 +85,9 @@ function cap_get_color_scheme() {
 
 	return $color_schemes['default']['colors'];
 }
-endif; // cap_get_color_scheme
+endif;
 
 if ( ! function_exists( 'cap_get_color_scheme_choices' ) ) :
-/**
- * Returns an array of color scheme choices registered for cap.
- *
- * @since cap 1.0
- *
- * @return array Array of color schemes.
- */
 function cap_get_color_scheme_choices() {
 	$color_schemes                = cap_get_color_schemes();
 	$color_scheme_control_options = array();
@@ -195,17 +98,9 @@ function cap_get_color_scheme_choices() {
 
 	return $color_scheme_control_options;
 }
-endif; // cap_get_color_scheme_choices
+endif;
 
 if ( ! function_exists( 'cap_sanitize_color_scheme' ) ) :
-/**
- * Sanitization callback for color schemes.
- *
- * @since cap 1.0
- *
- * @param string $value Color scheme name value.
- * @return string Color scheme name.
- */
 function cap_sanitize_color_scheme( $value ) {
 	$color_schemes = cap_get_color_scheme_choices();
 
@@ -215,26 +110,17 @@ function cap_sanitize_color_scheme( $value ) {
 
 	return $value;
 }
-endif; // cap_sanitize_color_scheme
+endif;
 
-/**
- * Enqueues front-end CSS for color scheme.
- *
- * @since cap 1.0
- *
- * @see wp_add_inline_style()
- */
 function cap_color_scheme_css() {
 	$color_scheme_option = get_theme_mod( 'color_scheme', 'default' );
 
-	// Don't do anything if the default color scheme is selected.
 	if ( 'default' === $color_scheme_option ) {
 		return;
 	}
 
 	$color_scheme = cap_get_color_scheme();
 
-	// Convert main and sidebar text hex color to rgba.
 	$color_textcolor_rgb         = cap_hex2rgb( $color_scheme[3] );
 	$color_sidebar_textcolor_rgb = cap_hex2rgb( $color_scheme[4] );
 	$colors = array(
@@ -258,37 +144,17 @@ function cap_color_scheme_css() {
 }
 add_action( 'wp_enqueue_scripts', 'cap_color_scheme_css' );
 
-/**
- * Binds JS listener to make Customizer color_scheme control.
- *
- * Passes color scheme data as colorScheme global.
- *
- * @since cap 1.0
- */
 function cap_customize_control_js() {
 	wp_enqueue_script( 'color-scheme-control', get_template_directory_uri() . '/js/color-scheme-control.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20141216', true );
 	wp_localize_script( 'color-scheme-control', 'colorScheme', cap_get_color_schemes() );
 }
 add_action( 'customize_controls_enqueue_scripts', 'cap_customize_control_js' );
 
-/**
- * Binds JS handlers to make the Customizer preview reload changes asynchronously.
- *
- * @since cap 1.0
- */
 function cap_customize_preview_js() {
 	wp_enqueue_script( 'cap-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array( 'customize-preview' ), '20141216', true );
 }
 add_action( 'customize_preview_init', 'cap_customize_preview_js' );
 
-/**
- * Returns CSS for the color schemes.
- *
- * @since cap 1.0
- *
- * @param array $colors Color scheme colors.
- * @return string Color scheme CSS.
- */
 function cap_get_color_scheme_css( $colors ) {
 	$colors = wp_parse_args( $colors, array(
 		'background_color'            => '',
@@ -306,20 +172,15 @@ function cap_get_color_scheme_css( $colors ) {
 	) );
 
 	$css = <<<CSS
-	/* Color Scheme */
-
-	/* Background Color */
 	body {
 		background-color: {$colors['background_color']};
 	}
 
-	/* Sidebar Background Color */
 	body:before,
 	.site-header {
 		background-color: {$colors['header_background_color']};
 	}
 
-	/* Box Background Color */
 	.post-navigation,
 	.pagination,
 	.secondary,
@@ -332,7 +193,6 @@ function cap_get_color_scheme_css( $colors ) {
 		background-color: {$colors['box_background_color']};
 	}
 
-	/* Box Background Color */
 	button,
 	input[type="button"],
 	input[type="reset"],
@@ -349,7 +209,6 @@ function cap_get_color_scheme_css( $colors ) {
 		color: {$colors['box_background_color']};
 	}
 
-	/* Main Text Color */
 	button,
 	input[type="button"],
 	input[type="reset"],
@@ -362,7 +221,6 @@ function cap_get_color_scheme_css( $colors ) {
 		background-color: {$colors['textcolor']};
 	}
 
-	/* Main Text Color */
 	body,
 	blockquote cite,
 	blockquote small,
@@ -386,7 +244,6 @@ function cap_get_color_scheme_css( $colors ) {
 		color: {$colors['textcolor']};
 	}
 
-	/* Main Text Color */
 	.entry-content a,
 	.entry-summary a,
 	.page-content a,
@@ -403,7 +260,6 @@ function cap_get_color_scheme_css( $colors ) {
 		border-color: {$colors['textcolor']};
 	}
 
-	/* Secondary Text Color */
 	button:hover,
 	button:focus,
 	input[type="button"]:hover,
@@ -420,11 +276,10 @@ function cap_get_color_scheme_css( $colors ) {
 	.widget_calendar tbody a:focus,
 	.page-links a:hover,
 	.page-links a:focus {
-		background-color: {$colors['textcolor']}; /* Fallback for IE7 and IE8 */
+		background-color: {$colors['textcolor']};
 		background-color: {$colors['secondary_textcolor']};
 	}
 
-	/* Secondary Text Color */
 	blockquote,
 	a:hover,
 	a:focus,
@@ -462,27 +317,24 @@ function cap_get_color_scheme_css( $colors ) {
 	.comment-list .reply a,
 	.widecolumn label,
 	.widecolumn .mu_register label {
-		color: {$colors['textcolor']}; /* Fallback for IE7 and IE8 */
+		color: {$colors['textcolor']};
 		color: {$colors['secondary_textcolor']};
 	}
 
-	/* Secondary Text Color */
 	blockquote,
 	.logged-in-as a:hover,
 	.comment-author a:hover {
-		border-color: {$colors['textcolor']}; /* Fallback for IE7 and IE8 */
+		border-color: {$colors['textcolor']};
 		border-color: {$colors['secondary_textcolor']};
 	}
 
-	/* Border Color */
 	hr,
 	.dropdown-toggle:hover,
 	.dropdown-toggle:focus {
-		background-color: {$colors['textcolor']}; /* Fallback for IE7 and IE8 */
+		background-color: {$colors['textcolor']};
 		background-color: {$colors['border_color']};
 	}
 
-	/* Border Color */
 	pre,
 	abbr[title],
 	table,
@@ -514,25 +366,23 @@ function cap_get_color_scheme_css( $colors ) {
 	.comment-list .trackback,
 	.comment-list .reply a,
 	.no-comments {
-		border-color: {$colors['textcolor']}; /* Fallback for IE7 and IE8 */
+		border-color: {$colors['textcolor']};
 		border-color: {$colors['border_color']};
 	}
 
-	/* Border Focus Color */
 	a:focus,
 	button:focus,
 	input:focus {
-		outline-color: {$colors['textcolor']}; /* Fallback for IE7 and IE8 */
+		outline-color: {$colors['textcolor']};
 		outline-color: {$colors['border_focus_color']};
 	}
 
 	input:focus,
 	textarea:focus {
-		border-color: {$colors['textcolor']}; /* Fallback for IE7 and IE8 */
+		border-color: {$colors['textcolor']};
 		border-color: {$colors['border_focus_color']};
 	}
 
-	/* Sidebar Link Color */
 	.secondary-toggle:before {
 		color: {$colors['sidebar_textcolor']};
 	}
@@ -542,50 +392,43 @@ function cap_get_color_scheme_css( $colors ) {
 		color: {$colors['sidebar_textcolor']};
 	}
 
-	/* Sidebar Text Color */
 	.site-title a:hover,
 	.site-title a:focus {
 		color: {$colors['secondary_sidebar_textcolor']};
 	}
 
-	/* Sidebar Border Color */
 	.secondary-toggle {
-		border-color: {$colors['sidebar_textcolor']}; /* Fallback for IE7 and IE8 */
+		border-color: {$colors['sidebar_textcolor']};
 		border-color: {$colors['sidebar_border_color']};
 	}
 
-	/* Sidebar Border Focus Color */
 	.secondary-toggle:hover,
 	.secondary-toggle:focus {
-		border-color: {$colors['sidebar_textcolor']}; /* Fallback for IE7 and IE8 */
+		border-color: {$colors['sidebar_textcolor']};
 		border-color: {$colors['sidebar_border_focus_color']};
 	}
 
 	.site-title a {
-		outline-color: {$colors['sidebar_textcolor']}; /* Fallback for IE7 and IE8 */
+		outline-color: {$colors['sidebar_textcolor']};
 		outline-color: {$colors['sidebar_border_focus_color']};
 	}
 
-	/* Meta Background Color */
 	.entry-footer {
 		background-color: {$colors['meta_box_background_color']};
 	}
 
 	@media screen and (min-width: 38.75em) {
-		/* Main Text Color */
 		.page-header {
 			border-color: {$colors['textcolor']};
 		}
 	}
 
 	@media screen and (min-width: 59.6875em) {
-		/* Make sure its transparent on desktop */
 		.site-header,
 		.secondary {
 			background-color: transparent;
 		}
 
-		/* Sidebar Background Color */
 		.widget button,
 		.widget input[type="button"],
 		.widget input[type="reset"],
@@ -596,7 +439,6 @@ function cap_get_color_scheme_css( $colors ) {
 			color: {$colors['header_background_color']};
 		}
 
-		/* Sidebar Link Color */
 		.secondary a,
 		.dropdown-toggle:after,
 		.widget-title,
@@ -617,7 +459,6 @@ function cap_get_color_scheme_css( $colors ) {
 			border-color: {$colors['sidebar_textcolor']};
 		}
 
-		/* Sidebar Text Color */
 		.secondary a:hover,
 		.secondary a:focus,
 		.main-navigation .menu-item-description,
@@ -645,7 +486,6 @@ function cap_get_color_scheme_css( $colors ) {
 			border-color: {$colors['secondary_sidebar_textcolor']};
 		}
 
-		/* Sidebar Border Color */
 		.main-navigation ul,
 		.main-navigation li,
 		.widget input,
@@ -683,14 +523,6 @@ CSS;
 	return $css;
 }
 
-/**
- * Output an Underscore template for generating CSS for the color scheme.
- *
- * The template generates the css dynamically for instant display in the Customizer
- * preview.
- *
- * @since cap 1.0
- */
 function cap_color_scheme_css_template() {
 	$colors = array(
 		'background_color'            => '{{ data.background_color }}',
@@ -709,7 +541,7 @@ function cap_color_scheme_css_template() {
 	?>
 	<script type="text/html" id="tmpl-cap-color-scheme">
 		<?php echo cap_get_color_scheme_css( $colors ); ?>
-	</script>
+    </script>
 	<?php
 }
 add_action( 'customize_controls_print_footer_scripts', 'cap_color_scheme_css_template' );

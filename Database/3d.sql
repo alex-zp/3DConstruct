@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `3d` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
-USE `3d`;
+--CREATE DATABASE  IF NOT EXISTS `3d` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
+--USE `3d`;
 -- MySQL dump 10.13  Distrib 5.5.43, for debian-linux-gnu (x86_64)
 --
 -- Host: 127.0.0.1    Database: 3d
