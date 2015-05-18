@@ -11,12 +11,12 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
     <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>">
+        <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width">
         <link rel="profile" href="http://gmpg.org/xfn/11">
-        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+        <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
         <!--[if lt IE 9]>
-        <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
+        <script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/html5.js"></script>
         <![endif]-->
         <?php wp_head(); ?>
     </head>
@@ -44,7 +44,9 @@
             <header id="hdr_header_content" class="hdr-header-content">
                 <div class="row">
                     <div class="col-xs-3">
-                        <img src="<?php echo get_bloginfo('template_directory'); ?>/images/header_logo.png" id="img_logo" class="img-logo" style="width: 100%; height: auto;"/>
+                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" title="Home">
+                            <img src="<?php echo get_bloginfo('template_directory'); ?>/images/header_logo.png" id="img_logo" class="img-logo" style="width: 100%; height: auto;"/>
+                        </a>
                     </div>
                     <div class="col-xs-9">
                         <nav class="navbar navbar-default">

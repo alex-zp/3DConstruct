@@ -369,7 +369,7 @@ Log in here: %4\$s
 
 We hope you enjoy your new site. Thanks!
 
---The 3dconstruct Team
+--The WordPress Team
 https://wordpress.org/
 "), $blog_url, $name, $password, $login_url );
 

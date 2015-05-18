@@ -43,7 +43,9 @@
                             } ?>
                         </div>
                         <div class="col-xs-3">
-                            <img src="<?php echo get_bloginfo('template_directory'); ?>/images/header_logo.png" id="img_logo" class="img-logo" style="width: 100%; height: auto;"/>
+                            <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" title="Home">
+                                <img src="<?php echo get_bloginfo('template_directory'); ?>/images/header_logo.png" id="img_logo" class="img-logo" style="width: 100%; height: auto;"/>
+                            </a>
                         </div>
                     </div>
                 </footer>
