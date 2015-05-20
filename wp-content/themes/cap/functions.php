@@ -92,6 +92,7 @@ function cap_setup() {
 		'primary' => __( 'Header Menu', 'cap' ),
         'home_top' => __( 'Home panel Menu', 'cap' ),
         'sector_left' => __( 'Sector page Menu', 'cap' ),
+        'services_left' => __( 'Services page Menu', 'cap' ),
         'gallery_left' => __( 'Gallery page Menu', 'cap' ),
         'blog_left' => __( 'Blog page Menu', 'cap' ),
 	) );

@@ -70,7 +70,8 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
 			if ( in_array( 'current-menu-item', $classes )
                 || (strtoupper($item->title) == 'GALLERY' && $template_file == 'GALLERY-PAGE.PHP')
-                || (strtoupper($item->title) == 'SECTORS' && $template_file == 'SECTORS-PAGE.PHP') )
+                || (strtoupper($item->title) == 'SECTORS' && $template_file == 'SECTORS-PAGE.PHP')
+                || (strtoupper($item->title) == 'SERVICES' && $template_file == 'SERVICES-PAGE.PHP') )
 				$class_names .= ' active';
 
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';

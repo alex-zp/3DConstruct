@@ -88,52 +88,21 @@ add_action('save_post', 'about_save_meta_box_data');
 /*---------------------------------------*/
 function services_meta_box_callback($post) {
     wp_nonce_field('services_meta_box', 'services_meta_box_nonce');
-    $why_title = get_post_meta($post->ID, '_why_title', true);
-    echo '<label for="services_why_title_field">';
-    _e('Title (First block)', 'services_textdomain');
+    $services_value = get_post_meta($post->ID, '_services_value', true);
+    echo '<label for="services_value_field">';
+    _e('Service type', 'services_textdomain');
     echo '</label> ';
-    echo '<input type="text" id="services_why_title_field" name="services_why_title_field" value="' . esc_attr($why_title) . '" size="25" style="display: block; width: 100%;" />';
-    $why_text = get_post_meta($post->ID, '_why_text', true);
-    echo '<label for="services_why_text_field">';
-    _e('Text (First block)', 'services_textdomain');
-    echo '</label> ';
-    echo '<textarea id="services_why_text_field" name="services_why_text_field" cols="128" rows="5" style="display: block; width: 100%; margin-bottom: 25px;">' . esc_attr($why_text) . '</textarea>';
-
-
-    $concept_title = get_post_meta($post->ID, '_concept_title', true);
-    echo '<label for="services_concept_title_field">';
-    _e('Title (Second block)', 'services_textdomain');
-    echo '</label> ';
-    echo '<input type="text" id="services_concept_title_field" name="services_concept_title_field" value="' . esc_attr($concept_title) . '" size="25" style="display: block; width: 100%;" />';
-    $concept_text = get_post_meta($post->ID, '_concept_text', true);
-    echo '<label for="services_concept_text_field">';
-    _e('Text (Second block)', 'services_textdomain');
-    echo '</label> ';
-    echo '<textarea id="services_concept_text_field" name="services_concept_text_field" cols="128" rows="5" style="display: block; width: 100%; margin-bottom: 25px;">' . esc_attr($concept_text) . '</textarea>';
-
-
-    $sales_title = get_post_meta($post->ID, '_sales_title', true);
-    echo '<label for="services_sales_title_field">';
-    _e('Title (Third block)', 'services_textdomain');
-    echo '</label> ';
-    echo '<input type="text" id="services_sales_title_field" name="services_sales_title_field" value="' . esc_attr($sales_title) . '" size="25" style="display: block; width: 100%;" />';
-    $sales_text = get_post_meta($post->ID, '_sales_text', true);
-    echo '<label for="services_sales_text_field">';
-    _e('Text (Third block)', 'services_textdomain');
-    echo '</label> ';
-    echo '<textarea id="services_sales_text_field" name="services_sales_text_field" cols="128" rows="5" style="display: block; width: 100%; margin-bottom: 25px;">' . esc_attr($sales_text) . '</textarea>';
-
-
-    $terrain_title = get_post_meta($post->ID, '_terrain_title', true);
-    echo '<label for="services_terrain_title_field">';
-    _e('Title (Fourth block)', 'services_textdomain');
-    echo '</label> ';
-    echo '<input type="text" id="services_terrain_title_field" name="services_terrain_title_field" value="' . esc_attr($terrain_title) . '" size="25" style="display: block; width: 100%;" />';
-    $terrain_text = get_post_meta($post->ID, '_terrain_text', true);
-    echo '<label for="services_terrain_text_field">';
-    _e('Text (Fourth block)', 'services_textdomain');
-    echo '</label> ';
-    echo '<textarea id="services_terrain_text_field" name="services_terrain_text_field" cols="128" rows="5" style="display: block; width: 100%; margin-bottom: 25px;">' . esc_attr($terrain_text) . '</textarea>';
+    echo '<select id="services_value_field" name="services_value_field" style="display: block; width: 100%;">
+                <option value="concept"';
+    echo ('concept' == esc_attr($services_value)) ? 'selected' : '';
+    echo '>Concept models</option>
+                <option value="sales"';
+    echo ('sales' == esc_attr($services_value)) ? 'selected' : '';
+    echo '>Sales models</option>
+                <option value="terrain"';
+    echo ('terrain' == esc_attr($services_value)) ? 'selected' : '';
+    echo '>Terrain models</option>
+            </select>';
 }
 function services_save_meta_box_data($post_id) {
     if(!isset($_POST['services_meta_box_nonce'])) {
@@ -155,17 +124,7 @@ function services_save_meta_box_data($post_id) {
         }
     }
 
-    update_post_meta($post_id, '_why_title', wp_kses($_POST['services_why_title_field'], array('br' => array())));
-    update_post_meta($post_id, '_why_text', wp_kses($_POST['services_why_text_field'], array('br' => array())));
-
-    update_post_meta($post_id, '_concept_title', wp_kses($_POST['services_concept_title_field'], array('br' => array())));
-    update_post_meta($post_id, '_concept_text', wp_kses($_POST['services_concept_text_field'], array('br' => array())));
-
-    update_post_meta($post_id, '_sales_title', wp_kses($_POST['services_sales_title_field'], array('br' => array())));
-    update_post_meta($post_id, '_sales_text', wp_kses($_POST['services_sales_text_field'], array('br' => array())));
-
-    update_post_meta($post_id, '_terrain_title', wp_kses($_POST['services_terrain_title_field'], array('br' => array())));
-    update_post_meta($post_id, '_terrain_text', wp_kses($_POST['services_terrain_text_field'], array('br' => array())));
+    update_post_meta($post_id, '_services_value', wp_kses($_POST['services_value_field'], array('br' => array())));
 }
 add_action('save_post', 'services_save_meta_box_data');
 /*---------------------------------------*/

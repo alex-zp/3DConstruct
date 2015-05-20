@@ -12,22 +12,37 @@ get_header(); ?>
 
     <article id="artc_page_content" class="artc-page-content">
         <div class="row dv-services-wrapper">
-            <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
-                <h1 id="h_page_title" class="h-page-title"><?php echo get_the_title($ID); ?></h1>
+            <div class="col-sm-3 col-xs-12">
+                <?php wp_nav_menu(array(
+                    'theme_location'    =>  'services_left',
+                    'menu'              =>  'services_left',
+                    'depth'             =>  0,
+                    'container'         =>  false,
+                    'menu_class'        =>  'mnu-sidebar-page-menu',
+                    'walker'            =>  ''
+                )); ?>
+            </div>
+            <div class="col-sm-9 col-xs-12">
+                <h1 id="h_page_title" class="h-page-title">SERVICES</h1>
 
-                <h3 class="h-sub-header"><?php echo preg_replace('/\n\r|\r\n|\n|\r/', '</p><p>', get_post_meta($post->ID, '_why_title', true)); ?></h3>
-                <p><?php echo preg_replace('/\n\r|\r\n|\n|\r/', '</p><p>', get_post_meta($post->ID, '_why_text', true)); ?></p>
+                <?php $type = get_post_meta($post->ID, '_services_value', true);
+                if($type == 'concept') { ?>
+                    <h3 class="h-sub-header">WHY 3D MODELS ARE BETTER THAN TRADITION MODELS</h3>
+                    <p>Visualisation of buildings was traditionally done using scale models made of wood or foam board.
+                        This allowed architects to see how the building would stand in physical space and help them pre-empt any construction issues.
+                        There was only one problem – handmade Styrofoam scale models can be very expensive and time consuming to build.
+                        The emergence of 3D printing does away with all this. It’s cheaper, it’s quicker and it’s a great deal easier.</p>
+                <?php } ?>
 
                 <div class="row dv-models-wrapper">
-                    <?php $type = 'concept';
-                    $args = array(
-                        'post_type'         =>  $type,
-                        'post_status'       =>  'publish',
-                        'posts_per_page'    =>  3,
-                        'caller_get_posts'  =>  1,
-                        'orderby'           =>  'meta_value',
-                        'order'             =>  'ASC'
-                    );
+                    <?php $args = array(
+                            'post_type'         =>  $type,
+                            'post_status'       =>  'publish',
+                            'posts_per_page'    =>  3,
+                            'caller_get_posts'  =>  1,
+                            'orderby'           =>  'meta_value',
+                            'order'             =>  'ASC'
+                        );
                     $my_query = null;
                     $my_query = new WP_Query($args);
                     if($my_query->have_posts()) { ?>
@@ -39,56 +54,11 @@ get_header(); ?>
                         <?php } }
                     wp_reset_query(); ?>
                 </div>
-                <h3 class="h-sub-header"><?php echo preg_replace('/\n\r|\r\n|\n|\r/', '</p><p>', get_post_meta($post->ID, '_concept_title', true)); ?></h3>
-                <p><?php echo preg_replace('/\n\r|\r\n|\n|\r/', '</p><p>', get_post_meta($post->ID, '_concept_text', true)); ?></p>
-
-                <div class="row dv-models-wrapper">
-                    <?php $type = 'sales';
-                    $args = array(
-                        'post_type'         =>  $type,
-                        'post_status'       =>  'publish',
-                        'posts_per_page'    =>  3,
-                        'caller_get_posts'  =>  1,
-                        'orderby'           =>  'meta_value',
-                        'order'             =>  'ASC'
-                    );
-                    $my_query = null;
-                    $my_query = new WP_Query($args);
-                    if($my_query->have_posts()) { ?>
-                        <?php while ($my_query->have_posts()) {
-                            $my_query->the_post(); ?>
-                            <div class="col-sm-4 col-xs-12 dv-models-item">
-                                <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>" class="img-model-photo" />
-                            </div>
-                        <?php } }
-                    wp_reset_query(); ?>
-                </div>
-                <h3 class="h-sub-header"><?php echo preg_replace('/\n\r|\r\n|\n|\r/', '</p><p>', get_post_meta($post->ID, '_sales_title', true)); ?></h3>
-                <p><?php echo preg_replace('/\n\r|\r\n|\n|\r/', '</p><p>', get_post_meta($post->ID, '_sales_text', true)); ?></p>
-
-                <div class="row dv-models-wrapper">
-                    <?php $type = 'terrain';
-                    $args = array(
-                        'post_type'         =>  $type,
-                        'post_status'       =>  'publish',
-                        'posts_per_page'    =>  3,
-                        'caller_get_posts'  =>  1,
-                        'orderby'           =>  'meta_value',
-                        'order'             =>  'ASC'
-                    );
-                    $my_query = null;
-                    $my_query = new WP_Query($args);
-                    if($my_query->have_posts()) { ?>
-                        <?php while ($my_query->have_posts()) {
-                            $my_query->the_post(); ?>
-                            <div class="col-sm-4 col-xs-12 dv-models-item">
-                                <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>" class="img-model-photo" />
-                            </div>
-                        <?php } }
-                    wp_reset_query(); ?>
-                </div>
-                <h3 class="h-sub-header"><?php echo preg_replace('/\n\r|\r\n|\n|\r/', '</p><p>', get_post_meta($post->ID, '_terrain_title', true)); ?></h3>
-                <p><?php echo preg_replace('/\n\r|\r\n|\n|\r/', '</p><p>', get_post_meta($post->ID, '_terrain_text', true)); ?></p>
+                <h3 class="h-sub-header"><?php echo get_the_title($ID); ?></h3>
+                <?php while (have_posts()) {
+                    the_post();
+                    echo '<p>' . get_the_content() . '</p>';
+                } ?>
             </div>
         </div>
     </article>
