@@ -72,6 +72,17 @@ footer.ftr-footer-content aside.asd-footer-widget a:hover { text-decoration: non
 /*-----------------------------------------------------------*/
 /* HOME page */
 /*-----------------------------------------------------------*/
+div#dv_modal_request_callback form p { font-size: 13px; font-weight: 700; }
+div#dv_modal_request_callback form input
+    , div#dv_modal_request_callback form textarea {
+        display: block;
+        width: 100%;
+        font-weight: 400;
+        margin: 5px 0;
+        padding: 5px 10px;
+    }
+div#dv_modal_request_callback form input {  }
+div#dv_modal_request_callback form textarea {  }
 section.sct-home-panel
     , section.sct-default-panel {
         margin: 40px auto 0;

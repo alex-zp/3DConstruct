@@ -6,6 +6,7 @@ function page_add_meta_box() {
         $template_file = strtoupper(get_post_meta($post_id, '_wp_page_template', TRUE));
         switch($template_file) {
             case 'HOME-PAGE.PHP':
+                add_meta_box('home_form_sectionid', __('HOME FORM', 'home_form_textdomain'), 'home_form_meta_box_callback', $screen);
                 break;
             case 'ABOUT-PAGE.PHP':
                 add_meta_box('about_what_sectionid', __('WHAT WE DO', 'about_what_textdomain'), 'about_what_meta_box_callback', $screen);
@@ -27,6 +28,40 @@ function page_add_meta_box() {
     }
 }
 add_action('add_meta_boxes', 'page_add_meta_box');
+/*---------------------------------------*/
+/* HOME PAGE */
+/*---------------------------------------*/
+function home_form_meta_box_callback($post) {
+    wp_nonce_field('home_meta_box', 'home_meta_box_nonce');
+    $form_value = get_post_meta($post->ID, '_home_form_value', true);
+    echo '<label for="home_form_value_field">';
+    _e('Sender shortcode', 'home_form_textdomain');
+    echo '</label> ';
+    echo '<input type="text" id="home_form_value_field" name="home_form_value_field" value="' . esc_attr($form_value) . '" size="25" style="display: block; width: 100%;" />';
+}
+function home_save_meta_box_data($post_id) {
+    if(!isset($_POST['home_meta_box_nonce'])) {
+        return;
+    }
+    if(!wp_verify_nonce($_POST['home_meta_box_nonce'], 'home_meta_box')) {
+        return;
+    }
+    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    if(isset($_POST['post_type']) && 'page' == $_POST['post_type']) {
+        if(!current_user_can('edit_page', $post_id)) {
+            return;
+        }
+    } else {
+        if(!current_user_can('edit_post', $post_id)) {
+            return;
+        }
+    }
+
+    update_post_meta($post_id, '_home_form_value', wp_kses($_POST['home_form_value_field'], array('br' => array())));
+}
+add_action('save_post', 'home_save_meta_box_data');
 /*---------------------------------------*/
 /* ABOUT PAGE */
 /*---------------------------------------*/

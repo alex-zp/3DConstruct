@@ -130,23 +130,12 @@
                                                 <button class="close" type="button" data-dismiss="modal">×</button>
                                                 <h4 class="modal-title">Request a callback</h4>
                                             </div>
-                                            <form method="post" id="frm_request_callback" action="">
-                                                <input type="hidden" id="request_submit_nonce" name="request_submit_nonce" value="<?php echo wp_create_nonce('request_submit_nonce'); ?>" />
-                                                <div class="modal-body">
-                                                    <div class="form-group">
-                                                        <label for="txt-name">Name</label>
-                                                        <input type="text" class="form-control" id="txt-name" name="txt-name" placeholder="Enter Name" />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="txt-phone">Phone number</label>
-                                                        <input type="text" class="form-control" id="txt-phone" name="txt-phone" placeholder="Enter Phone number" />
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
-                                                    <button id="submit_request_callback" class="btn btn-primary" type="button">Save changes</button>
-                                                </div>
-                                            </form>
+                                            <div class="modal-body">
+                                                <?php while (have_posts()) {
+                                                    the_post();
+                                                    echo do_shortcode(get_post_meta($post->ID, '_home_form_value', true));
+                                                } ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
