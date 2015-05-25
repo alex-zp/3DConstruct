@@ -423,3 +423,5 @@ require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 require get_template_directory() . '/inc/home_panel_menu_walker.php';
 require get_template_directory() . '/inc/custom_meta.php';
 require get_template_directory() . '/inc/custom_post_type.php';
+
+require get_template_directory() . '/inc/admin_callback_functionality.php';

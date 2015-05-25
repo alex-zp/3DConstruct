@@ -26,6 +26,28 @@
             })
         }
     }
-    $(document).ready(function() { resizeDocument(); });
+    $(document).ready(function() {
+        resizeDocument();
+        $('#submit_request_callback').on('click', function(event) {
+            event.preventDefault();
+            var form = $(this).closest('form#frm_request_callback');
+            if(form !== undefined && form !== null) {
+                var name = form.find('input[name="txt-name"]').val();
+                var phone = form.find('input[name="txt-phone"]').val();
+                var nonce = form.find('input[name="request_submit_nonce"]').val();
+                $.ajax({
+                    type        :   'POST',
+                    url         :   '/wp-admin/admin-ajax.php',
+                    data        :   { 'action' : 'ajax_callback_form', 'name' : name, 'phone' : phone, 'nonce' : nonce },
+                    beforeSend  :   function() {
+                                        form.find('input[name="txt-name"]').val('');
+                                        form.find('input[name="txt-phone"]').val('');
+                                        $('#dv_modal_request_callback').modal('hide');
+                                    },
+                    success     :   function() {  }
+                });
+            }
+        });
+    });
     $(window).resize(function() { resizeDocument(); });
 })(jQuery);

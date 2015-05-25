@@ -116,8 +116,40 @@
                                 } ?>
                             </div>
                             <div class="col-sm-5 col-xs-12">
-                                <a href="#" onclick="return false;" id="lnk_get_quote" class="lnk-get-quote">Get a quote ></a>
-                                <a href="#" onclick="return false;" id="lnk_call_back" class="lnk-call-back">Request a call back ></a>
+                                <?php $contact_page_link = 'href="#" onclick="return false;"';
+                                    $pages = get_pages(array('meta_key' => '_wp_page_template', 'meta_value' => 'contact-page.php'));
+                                    if(!empty($pages[0])) {
+                                        $contact_page_link = ' href="' . esc_url(get_permalink($pages[0])) . '" ';
+                                    } ?>
+                                <a <?php echo $contact_page_link; ?> id="lnk_get_quote" class="lnk-get-quote">Get a quote ></a>
+                                <a id="lnk_call_back" class="lnk-call-back" href="#dv_modal_request_callback" data-toggle="modal">Request a call back ></a>
+                                <div id="dv_modal_request_callback" class="modal fade" tabindex="-1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button class="close" type="button" data-dismiss="modal">×</button>
+                                                <h4 class="modal-title">Request a callback</h4>
+                                            </div>
+                                            <form method="post" id="frm_request_callback" action="">
+                                                <input type="hidden" id="request_submit_nonce" name="request_submit_nonce" value="<?php echo wp_create_nonce('request_submit_nonce'); ?>" />
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label for="txt-name">Name</label>
+                                                        <input type="text" class="form-control" id="txt-name" name="txt-name" placeholder="Enter Name" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="txt-phone">Phone number</label>
+                                                        <input type="text" class="form-control" id="txt-phone" name="txt-phone" placeholder="Enter Phone number" />
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                                                    <button id="submit_request_callback" class="btn btn-primary" type="button">Save changes</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

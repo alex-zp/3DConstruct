@@ -26,7 +26,7 @@ get_header(); ?>
                     <?php } ?>
                 </div>
                 <div class="col-sm-6 col-xs-12">
-                    <h1 id="h_page_title" class="h-page-title">Contact Form</h1>
+                    <h1 id="h_page_title" class="h-page-title">Contact Us / Get a Quote</h1>
                     <?php echo do_shortcode(get_post_meta($post->ID, '_form_value', true)); ?>
                 </div>
             </div>

@@ -9,7 +9,6 @@
  */
 
 get_header(); ?>
-
     <article id="artc_page_content" class="artc-page-content">
         <?php $type = 'model';
         $args = array(

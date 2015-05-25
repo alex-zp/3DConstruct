@@ -28,118 +28,57 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="64.0" vertical-offset="3348" max-vertical-offset="7758">
-              <caret line="90" column="30" selection-start-line="90" selection-start-column="30" selection-end-line="90" selection-end-column="30" />
+            <state vertical-scroll-proportion="-1.3333334" vertical-offset="360" max-vertical-offset="7794">
+              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_callback_functionality.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/inc/admin_callback_functionality.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.22259136" vertical-offset="681" max-vertical-offset="1584">
+              <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
               <folding>
-                <element signature="e#6#968#0#PHP" expanded="true" />
+                <marker date="1432555911050" expanded="true" signature="660:710" placeholder="SELECT * FRO..." />
+                <marker date="1432555911050" expanded="true" signature="660:711" placeholder="SELECT * FRO..philosopher_table..." />
+                <marker date="1432555911050" expanded="true" signature="660:726" placeholder="SELECT * FRO..$table_name..." />
+                <marker date="1432555911050" expanded="true" signature="660:751" placeholder="SELECT `id`,..." />
+                <marker date="1432555911050" expanded="true" signature="879:1679" placeholder="..." />
+                <marker date="1432555911050" expanded="true" signature="931:1660" placeholder="..." />
+                <marker date="1432555911050" expanded="true" signature="956:1104" placeholder="..." />
+                <marker date="1432555911050" expanded="true" signature="1281:1604" placeholder="..." />
+                <marker date="1432555911050" expanded="true" signature="2276:2644" placeholder="CREATE TABLE..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom_post_type.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/inc/custom_post_type.php">
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.777779" vertical-offset="753" max-vertical-offset="1872">
-              <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom_meta.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/inc/custom_meta.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.666667" vertical-offset="1188" max-vertical-offset="3114">
-              <caret line="91" column="46" selection-start-line="91" selection-start-column="46" selection-end-line="91" selection-end-column="46" />
+            <state vertical-scroll-proportion="-7.4444447" vertical-offset="1743" max-vertical-offset="2862">
+              <caret line="116" column="34" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
               <folding>
-                <element signature="n#about_how_meta_box_callback#0;n#!!top" expanded="false" />
-                <element signature="n#contact_map_meta_box_callback#0;n#!!top" expanded="false" />
-                <element signature="n#contact_form_meta_box_callback#0;n#!!top" expanded="false" />
-                <element signature="n#contact_save_meta_box_data#0;n#!!top" expanded="false" />
-                <marker date="1432127941011" expanded="false" signature="2378:2427" placeholder="..." />
-                <marker date="1432127941011" expanded="false" signature="3200:3249" placeholder="..." />
-                <marker date="1432127941011" expanded="true" signature="4839:4867" placeholder="..." />
-                <marker date="1432127941011" expanded="true" signature="4868:4908" placeholder="..." />
-                <marker date="1432127941011" expanded="false" signature="8465:8493" placeholder="..." />
-                <marker date="1432127941011" expanded="true" signature="8494:8542" placeholder="..." />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1432553958926" expanded="true" signature="7041:9299" placeholder="..." />
+                <marker date="1432553958926" expanded="true" signature="7104:9260" placeholder="..." />
+                <marker date="1432553958926" expanded="true" signature="7172:9217" placeholder="..." />
+                <marker date="1432553958926" expanded="true" signature="7243:7506" placeholder="..." />
+                <marker date="1432553958926" expanded="true" signature="7869:8705" placeholder="..." />
+                <marker date="1432553958926" expanded="true" signature="8780:9118" placeholder="..." />
+                <marker date="1432553958926" expanded="true" signature="9524:9552" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about-page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/about-page.php">
+      <file leaf-file-name="functions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.3333335" vertical-offset="72" max-vertical-offset="1188">
-              <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
-              <folding>
-                <element signature="e#6#141#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home-page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/home-page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="144" max-vertical-offset="1260">
-              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services-page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/services-page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.111111" vertical-offset="357" max-vertical-offset="1296">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding>
-                <element signature="e#6#144#0#PHP" expanded="true" />
-                <marker date="1432127971791" expanded="true" signature="1651:1666" placeholder="..." />
-                <marker date="1432127971791" expanded="true" signature="1701:1728" placeholder="..." />
-                <marker date="1432127971791" expanded="true" signature="2463:2639" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sectors-page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/sectors-page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="648">
-              <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gallery-page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/gallery-page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="990">
-              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.7777777" vertical-offset="69" max-vertical-offset="972">
-              <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wp_bootstrap_navwalker.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/inc/wp_bootstrap_navwalker.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34851936" vertical-offset="702" max-vertical-offset="3780">
-              <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1044">
+              <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -178,19 +117,20 @@
         <option value="$PROJECT_DIR$/wp-content/themes/cap/js/customize-preview.js" />
         <option value="$PROJECT_DIR$/wp-content/themes/cap/inc/customizer.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cap/css/bootstrap.min.css" />
-        <option value="$PROJECT_DIR$/wp-content/themes/cap/js/functions.js" />
         <option value="$PROJECT_DIR$/wp-content/themes/cap/js/map.js" />
         <option value="$PROJECT_DIR$/wp-content/themes/cap/contact-page.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cap/inc/custom_post_type.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cap/gallery-page.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cap/404.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cap/style.css" />
-        <option value="$PROJECT_DIR$/wp-content/themes/cap/header.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cap/footer.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/cap/functions.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cap/inc/custom_meta.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cap/services-page.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cap/inc/wp_bootstrap_navwalker.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cap/functions.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cap/header.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cap/js/functions.js" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cap/inc/admin_callback_functionality.php" />
       </list>
     </option>
   </component>
@@ -322,6 +262,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3d.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3d.loc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="inc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -345,7 +311,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jobs" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="FullScreen" value="false" />
   </component>
@@ -404,7 +370,7 @@
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24958949" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25177887" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -447,14 +413,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="972">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="594">
@@ -656,13 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27096775" vertical-offset="0" max-vertical-offset="930">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/content.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10299003" vertical-offset="159" max-vertical-offset="1080">
@@ -674,13 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11960133" vertical-offset="0" max-vertical-offset="903">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/contact-page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33887044" vertical-offset="0" max-vertical-offset="903">
-          <caret line="17" column="82" selection-start-line="17" selection-start-column="82" selection-end-line="17" selection-end-column="82" />
         </state>
       </provider>
     </entry>
@@ -719,16 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="703" max-vertical-offset="2430">
-          <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
-          <folding>
-            <element signature="e#6#204#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15946844" vertical-offset="0" max-vertical-offset="1350">
@@ -743,27 +677,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/about-page.php">
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/inc/wp_bootstrap_navwalker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.3333335" vertical-offset="72" max-vertical-offset="1188">
-          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
-          <folding>
-            <element signature="e#6#141#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.2591362" vertical-offset="702" max-vertical-offset="3780">
+          <caret line="60" column="50" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/home-page.php">
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1260">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.14285715" vertical-offset="69" max-vertical-offset="972">
+          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/gallery-page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="990">
+        <state vertical-scroll-proportion="0.22259136" vertical-offset="87" max-vertical-offset="990">
           <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
           <folding />
         </state>
@@ -771,75 +703,125 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/sectors-page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="648">
+        <state vertical-scroll-proportion="0.19933555" vertical-offset="0" max-vertical-offset="903">
           <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/services-page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12292359" vertical-offset="357" max-vertical-offset="1296">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#144#0#PHP" expanded="true" />
+            <marker date="1432542801183" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432542801183" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/about-page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15946844" vertical-offset="72" max-vertical-offset="1188">
+          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+          <folding>
+            <element signature="e#6#141#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/home-page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19933555" vertical-offset="0" max-vertical-offset="1260">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/inc/custom_post_type.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.777779" vertical-offset="753" max-vertical-offset="1872">
+        <state vertical-scroll-proportion="0.6777409" vertical-offset="594" max-vertical-offset="1872">
           <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/contact-page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07973422" vertical-offset="0" max-vertical-offset="903">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/inc/custom_meta.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.666667" vertical-offset="1188" max-vertical-offset="3114">
+        <state vertical-scroll-proportion="1.5747508" vertical-offset="0" max-vertical-offset="3114">
           <caret line="91" column="46" selection-start-line="91" selection-start-column="46" selection-end-line="91" selection-end-column="46" />
           <folding>
             <element signature="n#about_how_meta_box_callback#0;n#!!top" expanded="false" />
             <element signature="n#contact_map_meta_box_callback#0;n#!!top" expanded="false" />
             <element signature="n#contact_form_meta_box_callback#0;n#!!top" expanded="false" />
             <element signature="n#contact_save_meta_box_data#0;n#!!top" expanded="false" />
-            <marker date="1432127941011" expanded="false" signature="2378:2427" placeholder="..." />
-            <marker date="1432127941011" expanded="false" signature="3200:3249" placeholder="..." />
-            <marker date="1432127941011" expanded="true" signature="4839:4867" placeholder="..." />
-            <marker date="1432127941011" expanded="true" signature="4868:4908" placeholder="..." />
-            <marker date="1432127941011" expanded="false" signature="8465:8493" placeholder="..." />
-            <marker date="1432127941011" expanded="true" signature="8494:8542" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/services-page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.111111" vertical-offset="357" max-vertical-offset="1296">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#144#0#PHP" expanded="true" />
-            <marker date="1432127971791" expanded="true" signature="1651:1666" placeholder="..." />
-            <marker date="1432127971791" expanded="true" signature="1701:1728" placeholder="..." />
-            <marker date="1432127971791" expanded="true" signature="2463:2639" placeholder="..." />
+            <marker date="1432542817131" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1432542817131" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1432542817131" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1432542817131" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432542817131" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1432542817131" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="64.0" vertical-offset="3348" max-vertical-offset="7758">
-          <caret line="90" column="30" selection-start-line="90" selection-start-column="30" selection-end-line="90" selection-end-column="30" />
+        <state vertical-scroll-proportion="-1.3333334" vertical-offset="360" max-vertical-offset="7794">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.4444447" vertical-offset="1743" max-vertical-offset="2862">
+          <caret line="116" column="34" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
           <folding>
-            <element signature="e#6#968#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1432553958926" expanded="true" signature="7041:9299" placeholder="..." />
+            <marker date="1432553958926" expanded="true" signature="7104:9260" placeholder="..." />
+            <marker date="1432553958926" expanded="true" signature="7172:9217" placeholder="..." />
+            <marker date="1432553958926" expanded="true" signature="7243:7506" placeholder="..." />
+            <marker date="1432553958926" expanded="true" signature="7869:8705" placeholder="..." />
+            <marker date="1432553958926" expanded="true" signature="8780:9118" placeholder="..." />
+            <marker date="1432553958926" expanded="true" signature="9524:9552" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/footer.php">
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.7777777" vertical-offset="69" max-vertical-offset="972">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1044">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/inc/wp_bootstrap_navwalker.php">
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cap/inc/admin_callback_functionality.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34851936" vertical-offset="702" max-vertical-offset="3780">
-          <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
-          <folding />
+        <state vertical-scroll-proportion="0.22259136" vertical-offset="681" max-vertical-offset="1584">
+          <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+          <folding>
+            <marker date="1432555911050" expanded="true" signature="660:710" placeholder="SELECT * FRO..." />
+            <marker date="1432555911050" expanded="true" signature="660:711" placeholder="SELECT * FRO..philosopher_table..." />
+            <marker date="1432555911050" expanded="true" signature="660:726" placeholder="SELECT * FRO..$table_name..." />
+            <marker date="1432555911050" expanded="true" signature="660:751" placeholder="SELECT `id`,..." />
+            <marker date="1432555911050" expanded="true" signature="879:1679" placeholder="..." />
+            <marker date="1432555911050" expanded="true" signature="931:1660" placeholder="..." />
+            <marker date="1432555911050" expanded="true" signature="956:1104" placeholder="..." />
+            <marker date="1432555911050" expanded="true" signature="1281:1604" placeholder="..." />
+            <marker date="1432555911050" expanded="true" signature="2276:2644" placeholder="CREATE TABLE..." />
+          </folding>
         </state>
       </provider>
     </entry>
